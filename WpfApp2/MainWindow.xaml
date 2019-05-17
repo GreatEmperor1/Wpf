@@ -1,0 +1,35 @@
+﻿<Window x:Class="MyfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="503" Width="893" Background="LightGray">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="103*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox Name="tbX" HorizontalAlignment="Left" Height="23" Margin="82,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged_X"/>
+        <TextBox Name="tbB" HorizontalAlignment="Left" Height="23" Margin="82,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged_B"/>
+        <TextBlock HorizontalAlignment="Left" Margin="28,63,0,0" TextWrapping="Wrap" Text="X =" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="28,118,0,0" TextWrapping="Wrap" Text="B =" VerticalAlignment="Top" RenderTransformOrigin="0.679,-0.612"/>
+        <Button Content="Calculate" HorizontalAlignment="Left" Margin="28,225,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <TextBox Name="tbResult" HorizontalAlignment="Left" Height="120" Margin="28,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" TextChanged="TextBox_TextChanged_Result"/>
+
+        <Border Grid.Column="1" HorizontalAlignment="Left" Margin="68,38,0,0" VerticalAlignment="Top" Height="196" Width="111" BorderThickness="1" BorderBrush="Gray">
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,-1,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="196" Width="112" ><Run Text="f(x)"/><InlineUIContainer>
+                    <StackPanel Height="177" Width="112" Name="radioButtons">
+                        <RadioButton GroupName="func" Content="sin(x)" Checked="RadioButton_Checked"/>
+                        <RadioButton GroupName="func" Content="cos(x)" Checked="RadioButton_Checked"/>
+                        <RadioButton GroupName="func" Content="tg(x)" Checked="RadioButton_Checked"/>
+                    </StackPanel>
+
+                </InlineUIContainer></TextBlock>
+        </Border>
+        <CheckBox x:Name="Min" Content="min" Grid.Column="1" IsThreeState="True" Unchecked="checkBox_Unchecked" Indeterminate="checkBox_Indeterminate" Checked="checkBox_Checked" HorizontalAlignment="Left" Margin="267,66,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="Max" Content="max" Grid.Column="1" IsThreeState="True" Unchecked="checkBox_Unchecked" Indeterminate="checkBox_Indeterminate" Checked="checkBox_Checked" HorizontalAlignment="Left" Margin="267,116,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
